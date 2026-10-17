@@ -1,0 +1,13 @@
+# Byte-compiled / arquivos temporários do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de ambiente virtual
+.venv/
+env/
+venv/
+
+# Configurações de IDEs (VS Code, PyCharm)
+.vscode/
+.idea/
