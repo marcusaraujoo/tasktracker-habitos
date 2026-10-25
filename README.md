@@ -1,29 +1,52 @@
-# TaskTracker de Hábitos - Bootcamp II (Fase 2)
+# TaskTracker de Hábitos - Bootcamp II (Fase 3: Conteinerização)
 
-O **TaskTracker de Hábitos** é uma aplicação em linha de comando (CLI) desenvolvida em Python para gerenciamento e acompanhamento de rotinas e metas diárias. 
+O TaskTracker de Hábitos é uma aplicação em linha de comando (CLI) desenvolvida em Python para gerenciamento de rotinas diárias e metas.
 
-Este projeto faz parte da **Fase 2 (Entrega Intermediária)** da disciplina Bootcamp II, promovendo a migração do planejamento lógico arquitetural para uma implementação prática com controle de versão via Git e publicação no GitHub.
-
----
-
-## 🎯 Funcionalidades Principais
-
-- **Cadastro de Hábitos:** Permite cadastrar hábitos com validações estritas de entrada.
-- **Validação de Título:** Impede o cadastro de hábitos sem nome ou com espaços em branco.
-- **Validação de Prioridade:** Garante a classificação estrita entre *Alta*, *Média* e *Baixa*.
-- **Prevenção de Duplicidade:** Evita o cadastro de hábitos duplicados no mesmo dia.
-- **Acompanhamento de Progresso:** Exibe os hábitos cadastrados, detalhes e o progresso de hábitos concluídos.
-- **Marcação de Conclusão:** Permite alterar o status de um hábito de *Pendente* para *Concluído*.
+Nesta Fase 3 (Entrega Final), a aplicação foi conteinerizada com Docker e orquestrada via Docker Compose para garantir a execução isolada em qualquer ambiente sem necessidade de instalação local do interpretador Python.
 
 ---
 
 ## 📂 Estrutura do Repositório
 
-```plaintext
 tasktracker-habitos/
-├── README.md               # Documentação principal e guia de uso
-├── .gitignore              # Regras para ignorar arquivos temporários do Python
+├── .gitignore
+├── Dockerfile              # Receita para construção da imagem Docker
+├── docker-compose.yml      # Orquestração do container e interatividade CLI
+├── README.md               # Documentação completa do projeto
 ├── docs/
-│   └── planejamento_logico.pdf  # Planejamento lógico e arquitetura da Fase 1
+│   └── planejamento_logico.pdf  # Arquitetura e planejamento da Fase 1
 └── src/
-    └── main.py             # Código-fonte principal da aplicação em Python
+    └── main.py             # Código-fonte principal em Python
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- Linguagem: Python 3.11
+- Conteinerização: Docker & Docker Compose
+- Controle de Versão: Git & GitHub
+
+---
+
+## 🐳 Como Executar a Aplicação via Docker
+
+Certifique-se de ter o Docker ou Docker Desktop instalado na máquina.
+
+### Opção 1: Via Docker Compose (Recomendado)
+Para rodar a aplicação em modo interativo via orquestrador:
+docker compose run tasktracker
+
+### Opção 2: Via Comandos Docker Nativos
+
+1. Construir a imagem Docker:
+   docker build -t tasktracker-image .
+
+2. Executar o container em modo interativo:
+   docker run -it --name tasktracker-container tasktracker-image
+
+---
+
+## 💻 Como Executar Localmente sem Docker
+
+Caso queira executar diretamente via terminal local:
+python src/main.py
