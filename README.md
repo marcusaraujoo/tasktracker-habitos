@@ -16,7 +16,8 @@ tasktracker-habitos/
 ├── docs/
 │   └── planejamento_logico.pdf  # Arquitetura e planejamento da Fase 1
 └── src/
-    └── main.py             # Código-fonte principal em Python
+└── main.py             # Código-fonte principal em Python
+
 
 ---
 
@@ -34,19 +35,6 @@ Certifique-se de ter o Docker ou Docker Desktop instalado na máquina.
 
 ### Opção 1: Via Docker Compose (Recomendado)
 Para rodar a aplicação em modo interativo via orquestrador:
+```bash
 docker compose run tasktracker
 
-### Opção 2: Via Comandos Docker Nativos
-
-1. Construir a imagem Docker:
-   docker build -t tasktracker-image .
-
-2. Executar o container em modo interativo:
-   docker run -it --name tasktracker-container tasktracker-image
-
----
-
-## 💻 Como Executar Localmente sem Docker
-
-Caso queira executar diretamente via terminal local:
-python src/main.py
